@@ -10,7 +10,7 @@ En la siguiente página esta indicadas todas las herramientas a usar en el desar
 
 ## Listo de laboratorios
 
-1. [LABORATORIO 1. INITIAL LIVE RESPONSE](Lab1.md)
+1. [Laboratorio 1. Initial Live Response](Lab1.md)
 <!-- 2. [Laboratorio 2 - Configuración Inicial de los Servicios](Laboratorio%202.md) -->
 
 ---
