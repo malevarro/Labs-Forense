@@ -40,10 +40,9 @@
 Dentro del laboratorio se hará necesario la utilización de las siguientes herramientas y elementos:
 
 - Comandos del sistema operativo Windows (Powershell o CMD)
-- Herramientas de Sysinternals
+- Sysinternals Suite
 - Notepad++
 - NirLauncher
-- Wintriage
 
 ## Marco Teórico
 

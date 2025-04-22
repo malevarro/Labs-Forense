@@ -11,7 +11,7 @@ En la siguiente página esta indicadas todas las herramientas a usar en el desar
 ## Listo de laboratorios
 
 1. [LABORATORIO 1. INITIAL LIVE RESPONSE](Lab1.md)
-2. [Laboratorio 2 - Configuración Inicial de los Servicios](Laboratorio%202.md)
+<!-- 2. [Laboratorio 2 - Configuración Inicial de los Servicios](Laboratorio%202.md) -->
 
 ---
 Material de libre acceso y consulta.
