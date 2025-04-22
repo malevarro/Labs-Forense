@@ -1,6 +1,6 @@
-# LABORATORIO 1. INITIAL LIVE RESPONSE
+# Laboratorio 1. Initial Live Response
 
-- [LABORATORIO 1. INITIAL LIVE RESPONSE](#laboratorio-1-initial-live-response)
+- [Laboratorio 1. Initial Live Response](#laboratorio-1-initial-live-response)
   - [Objetivos](#objetivos)
   - [Material a Utilizar](#material-a-utilizar)
   - [Marco Teórico](#marco-teórico)
