@@ -276,10 +276,12 @@ __NOTA:__ Cuidado con seleccionar el disco duro base de su equipo, si se equivoc
 #### Wintriage
 
 1. Realice la descompresión del archivo Wintriage en la ruta de trabajo.
-2. Seleccione la opción del ejecutable que corresponda a su arquitectura de procesador
-3. La primera vez, en la ventana de advertencia de Windows haga clic en la opción de mas información y luego en la opción de "Ejecutar de todas formas"
-4. En la ventana de la aplicación seleccione la opción de "triage"
-5. En la carpeta de ejecución de la herramienta se crea una carpeta con todos los elementos extraídos
-6. Verifique la carpeta que tiene la parte inicial del nombre del equipo y la fecha (Ej.: VM-ALEJO20250429175815)
-7. Analice la información obtenida y resalte los archivos
-8. Si usted desea al finalizar valide las demás opciones que posee la herramienta
+2. Por favor lea el archivo que se llama "Leeme_primero_anda.txt"
+3. Descargue y configure las aplicaciones auxiliares que le indica el archivo dentro de la carpeta tools.
+4. Seleccione la opción del ejecutable que corresponda a su arquitectura de procesador
+5. La primera vez, en la ventana de advertencia de Windows haga clic en la opción de mas información y luego en la opción de "Ejecutar de todas formas"
+6. En la ventana de la aplicación seleccione la opción de "triage"
+7. En la carpeta de ejecución de la herramienta se crea una carpeta con todos los elementos extraídos
+8. Verifique la carpeta que tiene la parte inicial del nombre del equipo y la fecha (Ej.: VM-ALEJO20250429175815)
+9. Analice la información obtenida y resalte los archivos
+10. Si usted desea al finalizar valide las demás opciones que posee la herramienta
