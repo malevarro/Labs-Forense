@@ -27,9 +27,6 @@
         - [Análisis propio](#análisis-propio)
     - [Levantamiento de Imagen Forense (Dispositivo Externo o Interno)](#levantamiento-de-imagen-forense-dispositivo-externo-o-interno)
       - [Imagen Forense con Exterro FTK Imager](#imagen-forense-con-exterro-ftk-imager)
-    - [Live Response Automation](#live-response-automation)
-      - [LiveResponse Cedarpelta](#liveresponse-cedarpelta)
-      - [Wintriage](#wintriage)
 
 ## Objetivos
 
@@ -45,8 +42,6 @@ Dentro del laboratorio se hará necesario la utilización de las siguientes herr
 
 - Máquina objeto de análisis. Puede ser su equipo físico o alguna máquina virtual Windows que usted desee analizar.
 - Dispositivo de almacenamiento externo USB (se recomienda no superior a 8GB7)
-- LiveResponse Cedarpelta
-- Wintriage
 - FTK Imager
 - Volatility
   - Version 3
@@ -251,37 +246,3 @@ Para iniciar el proceso de copia forense de una unidad de almacenamiento se ha´
    __NOTA:__ Se recomienda no llegar a fragmentar en archivos más pequeños la evidencia, por lo que será necesario configurar la opción Image Fragment Size en 0, pero si el medio de almacenamiento es grande, configure el tamaño en MB en los cuales desea particionarlo. De igual manera la parte de compresión.
 9. Finalmente, para llegar a realizar una verificación completa del proceso, seleccione las opciones de Verify images after they are created, Precalculate Progress Statistics y Create directorylistings of all files in the image after they are created. Usted podrá ver el progreso y el tiempo estimado varía según el tamaño del medio de almacenamiento.
 10. Si el procedimiento no tuvo ningún inconveniente, se generará una ventana con un resumen de la información de la imagen. De igual manera se genera automáticamente un archivo TXT que contiene dicha información.
-
-### Live Response Automation
-
-Con la ejecución del siguiente procedimiento, se espera realizar el levantamiento de información de manera automática de los elementos necesarios para una investigación forense, haciendo uso de las herramientas de LiveResponse Cedarpelta y Wintriage. El uso de herramientas automatizadas nos ayudan a ejecutar los procedimientos de manera más rápida y a evitar errores humanos en el levantamiento de la información.
-
-#### LiveResponse Cedarpelta
-
-1. Realice la descompresión del archivo LiveResponseCollection-Cedarpelta.zip en la ruta de trabajo.
-2. En el interior de la carpeta se encontrará una serie de carpetas para la ejecución del levantamiento de información según el sistema operativo, para este caso del laboratorio, haremos uso de la carpeta de Windows.
-3. En el interior de la carpeta, ejecuta el archivo exe que se encuentra en el interior. Nota: Recuerde ejecutar la herramienta con privilegios de administrador del equipo.
-4. En la nueva ventana que se despliega, se debe seleccionar el tipo de levantamiento de información que se desea realizar:
-   - Secure complete: realiza un levantamiento de la información del equipo que incluye la salida de comandos para la información volátil, una imagen de la memoria RAM y una imagen del disco duro
-   - Memory Dump: Esta opción la información volátil por medio de comandos y una imagen de la memoria RAM
-   - Triage: realiza un levantamiento de la información volátil por medio de comandos del sistema operativo y extracción de logs.
-5. Para el caso del laboratorio, se realizará la selección de la opción de Triage, y luego se da clic en el botón de “Run…”, sin embargo, si usted desea realizar el levantamiento de la imagen de la memoria RAM y de algún medio de almacenamiento del equipo selecciones las opciones correspondientes.
-__NOTA:__ Cuidado con seleccionar el disco duro base de su equipo, si se equivoca puede llevar el espacio total de su disco duro y producir falla en el equipo. recuerde que este procedimiento es bajo su responsabilidad.
-6. Se abre una nueva ventana de la consola de comandos, es necesario esperar a que termine el procedimiento
-7. Al finalizar el procedimiento, le indica que presione una tecla
-8. En la carpeta de ejecución de la herramienta se crea una carpeta con todos los elementos extraídos
-9. Verifique la carpeta llamada LiveResponseData
-10. Analice la información obtenida y resalte los archivos
-
-#### Wintriage
-
-1. Realice la descompresión del archivo Wintriage en la ruta de trabajo.
-2. Por favor lea el archivo que se llama "Leeme_primero_anda.txt"
-3. Descargue y configure las aplicaciones auxiliares que le indica el archivo dentro de la carpeta tools.
-4. Seleccione la opción del ejecutable que corresponda a su arquitectura de procesador
-5. La primera vez, en la ventana de advertencia de Windows haga clic en la opción de mas información y luego en la opción de "Ejecutar de todas formas"
-6. En la ventana de la aplicación seleccione la opción de "triage"
-7. En la carpeta de ejecución de la herramienta se crea una carpeta con todos los elementos extraídos
-8. Verifique la carpeta que tiene la parte inicial del nombre del equipo y la fecha (Ej.: VM-ALEJO20250429175815)
-9. Analice la información obtenida y resalte los archivos
-10. Si usted desea al finalizar valide las demás opciones que posee la herramienta
