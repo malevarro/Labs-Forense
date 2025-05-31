@@ -12,12 +12,17 @@
     - [Archivos de evidencia](#archivos-de-evidencia)
     - [Informe Técnico Forense](#informe-técnico-forense)
   - [Procedimiento](#procedimiento)
+    - [Análisis al detalle con RedLine](#análisis-al-detalle-con-redline)
+    - [Reto 1 RedLine](#reto-1-redline)
     - [Live Response Automation](#live-response-automation)
       - [LiveResponse Cedarpelta](#liveresponse-cedarpelta)
       - [Wintriage](#wintriage)
     - [Obtener Archivos de una imagen forense](#obtener-archivos-de-una-imagen-forense)
-    - [Análisis al detalle con RedLine](#análisis-al-detalle-con-redline)
-    - [Reto 1 RedLine](#reto-1-redline)
+    - [Análisis de la imagen forense](#análisis-de-la-imagen-forense)
+      - [Carga de la Imagen en Autopsy](#carga-de-la-imagen-en-autopsy)
+      - [Data Carving con Autopsy](#data-carving-con-autopsy)
+    - [Análisis de Metadatos con FOCA](#análisis-de-metadatos-con-foca)
+    - [Proceso de Sanitización](#proceso-de-sanitización)
 
 ## Objetivos
 
@@ -98,6 +103,26 @@ __NOTA:__ si no se realiza la entrega del archivo del informe técnico forense c
 
 ## Procedimiento
 
+### Análisis al detalle con RedLine
+
+Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+
+1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
+2. Busque el laboratorio denominado __REDLINE__
+3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
+4. Resuelva todas preguntas que plantea la plataforma.
+
+__Nota:__ Recuerde realizar la documentación de todos los pasos que ejecutó para el análisis.
+
+### Reto 1 RedLine
+
+Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+
+1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
+2. Busque el laboratorio denominado __REvil Corp__
+3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
+4. Resuelva todas preguntas que plantea la plataforma.
+
 ### Live Response Automation
 
 Con la ejecución del siguiente procedimiento, se espera realizar el levantamiento de información de manera automática de los elementos necesarios para una investigación forense, haciendo uso de las herramientas de LiveResponse Cedarpelta y Wintriage. El uso de herramientas automatizadas nos ayudan a ejecutar los procedimientos de manera más rápida y a evitar errores humanos en el levantamiento de la información.
@@ -152,22 +177,78 @@ Este procedimiento le permitirá extraer los archivos que se encuentran en una i
 
 __Objetivo:__ obtenga un par de archivos recuperados de la imagen de la memoria USB obtenida en el laboratorio anterior. Debe mostrar que el archivo ha sido borrado de la memoria y se pudo recuperar con este procedimiento.
 
-### Análisis al detalle con RedLine
+### Análisis de la imagen forense
 
-Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+#### Carga de la Imagen en Autopsy
 
-1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
-2. Busque el laboratorio denominado __REDLINE__
-3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
-4. Resuelva todas preguntas que plantea la plataforma.
+1. Se realiza la ejecución de la herramienta Autopsy
+2. En la ventana de ejecución se selecciona la opción de crear un nuevo caso
+3. En la nueva ventana se ingresa el nombre del caso y la carpeta de trabajo del análisis de la imagen forense
+4. En la siguiente ventana se ingresa el número del caso y el nombre del examinador de la imagen forense
+5. Una vez creado el caso, es necesario adiciona el archivo de imagen forense a la herramienta. Para esta acción se selecciona la opción de “add data source”
+6. Aparece una nueva ventana en donde se indica la ruta del archivo de la imagen, y se indica la zona horaria de operación, para este caso es la de Colombia
+7. En la siguiente ventana se habilitan las opciones de análisis de la imagen, y habilitar el análisis del espacio sin asignar de la imagen.
+8. Se inicia el proceso de carga e indexación de la imagen en la herramienta de Autopsy
+9. Al finalizar la carga de la imagen se puede observar que se reconocen los diferentes volúmenes presentes en el dispositivo original
 
-__Nota:__ Recuerde realizar la documentación de todos los pasos que ejecutó para el análisis.
+#### Data Carving con Autopsy
 
-### Reto 1 RedLine
+Con la ayuda de la herramienta de Autopsy, realizar búsquedas sobre la imagen forense que ha sido cargada en la herramienta y obtener los siguientes tipos de archivos:
 
-Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+- .doc
+- .jpg
+- .wav
+- .xls
+- .pdf
+- .gif
+- .mov
+- .wmv
+- .ppt
+- .zip
 
-1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
-2. Busque el laboratorio denominado __REvil Corp__
-3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
-4. Resuelva todas preguntas que plantea la plataforma.
+De los resultados obtenidos en la búsqueda por medio de la herramienta obtener una copia del archivo y obtener los siguientes datos:
+
+- Nombre del archivo
+- Ruta de ubicación del archivo
+- Hash MD5 y SHA256
+- Ubicación del archivo en disco
+- Identificar si es un archivo activo o fue borrado
+
+__NOTAS:__
+
+1. Para más información de cómo realizar búsquedas con Autopsy verificar el documento “Autopsy3_ReYDeS.pdf” que le ha sido entregado, página 24.
+2. Recuerde que todo procedimiento realizado debe ser documentado completamente.
+
+### Análisis de Metadatos con FOCA
+
+Se debe realizar la instalación de la herramienta FOCA y luego realizar la creación de un proyecto de análisis, una vez hecho estos pasos seguir los siguientes pasos para cargar todos los documentos encontrados previamente en las imágenes forenses y obtener los metadatos de cada uno
+
+1. Se realiza la ejecución de la herramienta FOCA, con el fin de verificar los metadatos del archivo, e identificar si hay más información oculta.
+2. Sobre la ventana de la aplicación, en el menú de la izquierda se selecciona la opción de metadata->Documents
+3. En la sección de la ventana del lado derecho, damos clic derecho y seleccionamos la opción de “Add File”
+4. En la nueva ventana, ubicamos el archivo en la ruta del análisis que se está realizando y se selecciona la opción de abrir
+5. Una vez cargado el archivo en la herramienta se selecciona y con clic derecho seleccionamos la opción de “Extract Metadata”
+6. Luego de esta tarea, en el menú de la izquierda se ubica el tipo de archivo, y el nombre del archivo, en la sección de la derecha aparece indicado el contenido de los metadatos del archivo
+7. Sobre la descripción de los metadatos se hace clic derecho y se selecciona la opción de “Export data to file”
+8. En la ventana que aparece se indica la ruta y el nombre del archivo en donde se desea guardar esta información. Se decide guardar esta información ya que se observa un nombre de usuario que puede ser de utilidad.
+9. Se verifica la creación de un nuevo archivo en la ruta de trabajo
+10. Se abre el archivo para verificar el contenido
+
+### Proceso de Sanitización
+
+A continuación, se detalla el proceso de sanitización de medios de almacenamiento usados para el análisis y almacenamiento de la evidencia digital 
+
+1. Se verifican los dispositivos USB instalados y reconocidos en el equipo
+2. El administrador de dispositivos reconoce las unidades de almacenamiento
+3. Se realiza la ejecución de la herramienta DiskWipe 1.7 para dar inicio al proceso de sanitización de las unidades de almacenamiento
+4. Se ubica la ruta del ejecutable
+5. Se realiza la ejecución de la herramienta con permisos de administrador
+6. Se inicia la aplicación y se recolecta la información de los elementos de almacenamiento utilizados
+7. Se muestra la información del medio de almacenamiento ubicado en la letra Que usted haya encontrado previamente
+8. Sobre la herramienta de DiskWipe se inicia el proceso de borrado seguro del dispositivo de almacenamiento en la letra de la unidad. la primera opción es elegir el tipo de sistema de archivos que se desea utilizar en el medio de almacenamiento. Para este caso se selecciona NTFS.
+9. En la siguiente ventana es necesario escoger el tipo de borrado seguro que se desea realizar en el dispositivo. Se seleccionó un tipo de borrado seguro de 7 pasadas, ya que el medio de almacenamiento no ha sido utilizado previamente.
+10. Para iniciar el proceso, en la última ventana es necesario confirmar el borrado de los datos del medio de almacenamiento
+11. Se observa el inicio del borrado seguro del dispositivo de almacenamiento. Es necesario esperar a que finalice la tarea de borrado seguro. La primera fase del borrado realiza el formateo de acuerdo al sistema de archivos elegido, para este caso NTFS
+12. Finalizada la configuración del sistema de archivos, se da inicio al proceso de borrado seguro del medio de almacenamiento
+13. Se realiza el borrado seguro de la unidad
+14. Por medio de la herramienta de DiskWipe se verifica el contenido de la unidad de almacenamiento y se observa que todo ha sido clareado
