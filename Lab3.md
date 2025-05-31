@@ -15,9 +15,9 @@
     - [Live Response Automation](#live-response-automation)
       - [LiveResponse Cedarpelta](#liveresponse-cedarpelta)
       - [Wintriage](#wintriage)
+    - [Obtener Archivos de una imagen forense](#obtener-archivos-de-una-imagen-forense)
     - [Análisis al detalle con RedLine](#análisis-al-detalle-con-redline)
     - [Reto 1 RedLine](#reto-1-redline)
-    - [Obtener Archivos de una imagen forense](#obtener-archivos-de-una-imagen-forense)
 
 ## Objetivos
 
@@ -132,26 +132,6 @@ __NOTA:__ Cuidado con seleccionar el disco duro base de su equipo, si se equivoc
 9. Analice la información obtenida y resalte los archivos
 10. Si usted desea al finalizar valide las demás opciones que posee la herramienta
 
-### Análisis al detalle con RedLine
-
-Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
-
-1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
-2. Busque el laboratorio denominado __REDLINE__
-3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
-4. Resuelva todas preguntas que plantea la plataforma.
-
-__Nota:__ Recuerde realizar la documentación de todos los pasos que ejecutó para el análisis.
-
-### Reto 1 RedLine
-
-Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
-
-1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
-2. Busque el laboratorio denominado __REvil Corp__
-3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
-4. Resuelva todas preguntas que plantea la plataforma.
-
 ### Obtener Archivos de una imagen forense
 
 Este procedimiento le permitirá extraer los archivos que se encuentran en una imagen forense, de acuerdo con el estado del elemento de origen, se puede llegar obtener la restauración de archivos que se encuentran borrados.
@@ -171,3 +151,23 @@ Este procedimiento le permitirá extraer los archivos que se encuentran en una i
 13. Aparece una nueva ventana con los archivos extraídos.
 
 __Objetivo:__ obtenga un par de archivos recuperados de la imagen de la memoria USB obtenida en el laboratorio anterior. Debe mostrar que el archivo ha sido borrado de la memoria y se pudo recuperar con este procedimiento.
+
+### Análisis al detalle con RedLine
+
+Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+
+1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
+2. Busque el laboratorio denominado __REDLINE__
+3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
+4. Resuelva todas preguntas que plantea la plataforma.
+
+__Nota:__ Recuerde realizar la documentación de todos los pasos que ejecutó para el análisis.
+
+### Reto 1 RedLine
+
+Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+
+1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
+2. Busque el laboratorio denominado __REvil Corp__
+3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
+4. Resuelva todas preguntas que plantea la plataforma.
