@@ -17,6 +17,7 @@
       - [Wintriage](#wintriage)
     - [Análisis al detalle con RedLine](#análisis-al-detalle-con-redline)
     - [Reto 1 RedLine](#reto-1-redline)
+    - [Obtener Archivos de una imagen forense](#obtener-archivos-de-una-imagen-forense)
 
 ## Objetivos
 
@@ -150,3 +151,23 @@ Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la c
 2. Busque el laboratorio denominado __REvil Corp__
 3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
 4. Resuelva todas preguntas que plantea la plataforma.
+
+### Obtener Archivos de una imagen forense
+
+Este procedimiento le permitirá extraer los archivos que se encuentran en una imagen forense, de acuerdo con el estado del elemento de origen, se puede llegar obtener la restauración de archivos que se encuentran borrados.
+
+1. Ejecutar la herramienta de DiskDigger con privilegios de administrador
+2. En la herramienta, hacer clic en la pestaña de avanzado y luego en el botón de “Escanear imagen de disco”
+3. Seleccionar el archivo la copia de trabajo forense que se desea cargar y analizar
+4. En la nueva ventana se selecciona la opción de “Cavar más profundo” y haga clic en el botón de siguiente
+5. Luego haga clic en el botón de “seleccionar todos” para escanear todo tipo de archivos en la imagen
+6. La aplicación inicia el análisis de la imagen, en la parte inferior se evidencia el avance de la carga de los archivos
+7. Al finalizar el análisis total la herramienta indica la finalización
+8. Se puede navegar en las pestañas de los diferentes tipos de archivos, una vez veamos un archivo de interés y que se desee extraer se da clic sobre el archivo y se selecciona la opción de “Guardar archivo como”
+9. Se debe indicar la ruta en donde serán exportados los archivos
+10. Seleccionar la opción de continuar sin registar
+11. Como el archivo ha sido borrado y se pudieron perder algunos bytes, se debe ingresar un valor estimado del tamaño del archivo
+12. Si el archivo es menor al tamaño estimado, aparecerá la siguiente advertencia, en donde se puede dar clic en el botón de “ignorar”
+13. Aparece una nueva ventana con los archivos extraídos.
+
+__Objetivo:__ obtenga un par de archivos recuperados de la imagen de la memoria USB obtenida en el laboratorio anterior. Debe mostrar que el archivo ha sido borrado de la memoria y se pudo recuperar con este procedimiento.
