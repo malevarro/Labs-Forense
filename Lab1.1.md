@@ -32,4 +32,7 @@ Una vez se haya usted registrado en la plataforma, por favor desarrollo y docume
 2. [Forensic Imaging](https://tryhackme.com/room/forensicimaging)
 3. [Intro to Cold System Forensics](https://tryhackme.com/room/introtocoldsystemforensics)
 4. [Legal Considerations in DFIR](https://tryhackme.com/room/dfirprocesslegalconsiderations)
-5.  [Memory Analysis Introduction](https://tryhackme.com/room/memoryanalysisintroduction)
+5. [Memory Analysis Introduction](https://tryhackme.com/room/memoryanalysisintroduction)
+6. [Investigating Windows](https://tryhackme.com/room/investigatingwindows)
+
+__NOTA:__ Realice las actividades y no olvide tomar evidencias para ir realizando la documentación requerida.
