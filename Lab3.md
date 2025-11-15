@@ -12,12 +12,12 @@
     - [Archivos de evidencia](#archivos-de-evidencia)
     - [Informe Técnico Forense](#informe-técnico-forense)
   - [Procedimiento](#procedimiento)
-    - [Análisis al detalle con RedLine](#análisis-al-detalle-con-redline)
-    - [Reto 1 RedLine](#reto-1-redline)
     - [Live Response Automation](#live-response-automation)
       - [LiveResponse Cedarpelta](#liveresponse-cedarpelta)
       - [Wintriage](#wintriage)
-    - [Obtener Archivos de una imagen forense](#obtener-archivos-de-una-imagen-forense)
+    - [Levantamiento de Imagen Forense (Dispositivo Externo o Interno)](#levantamiento-de-imagen-forense-dispositivo-externo-o-interno)
+      - [Imagen Forense con Exterro FTK Imager](#imagen-forense-con-exterro-ftk-imager)
+    - [Recuperar archivos de una imagen forense](#recuperar-archivos-de-una-imagen-forense)
     - [Análisis de la imagen forense](#análisis-de-la-imagen-forense)
       - [Carga de la Imagen en Autopsy](#carga-de-la-imagen-en-autopsy)
       - [Data Carving con Autopsy](#data-carving-con-autopsy)
@@ -103,26 +103,6 @@ __NOTA:__ si no se realiza la entrega del archivo del informe técnico forense c
 
 ## Procedimiento
 
-### Análisis al detalle con RedLine
-
-Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
-
-1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
-2. Busque el laboratorio denominado __REDLINE__
-3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
-4. Resuelva todas preguntas que plantea la plataforma.
-
-__Nota:__ Recuerde realizar la documentación de todos los pasos que ejecutó para el análisis.
-
-### Reto 1 RedLine
-
-Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
-
-1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
-2. Busque el laboratorio denominado __REvil Corp__
-3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
-4. Resuelva todas preguntas que plantea la plataforma.
-
 ### Live Response Automation
 
 Con la ejecución del siguiente procedimiento, se espera realizar el levantamiento de información de manera automática de los elementos necesarios para una investigación forense, haciendo uso de las herramientas de LiveResponse Cedarpelta y Wintriage. El uso de herramientas automatizadas nos ayudan a ejecutar los procedimientos de manera más rápida y a evitar errores humanos en el levantamiento de la información.
@@ -157,7 +137,35 @@ __NOTA:__ Cuidado con seleccionar el disco duro base de su equipo, si se equivoc
 9. Analice la información obtenida y resalte los archivos
 10. Si usted desea al finalizar valide las demás opciones que posee la herramienta
 
-### Obtener Archivos de una imagen forense
+### Levantamiento de Imagen Forense (Dispositivo Externo o Interno)
+
+Es posible llegar a realizar una copia forense bit a bit de diferentes dispositivos de almacenamientos y de diferentes maneras según la finalidad que se quiera obtener.
+
+__NOTA:__ Para la ejecución de este laboratorio por favor hacer uso de una memoria USB de máximo 8GB. El procedimiento que vamos a ejecutar es el mismo en cualquier tipo de almacenamiento sin importar su tamaño.
+
+#### Imagen Forense con Exterro FTK Imager
+
+Para iniciar el proceso de copia forense de una unidad de almacenamiento se ha´ra uso de la herramienta de Exterro FTK Imager.
+
+1. Descargar e instalar la aplicación con las opciones por defecto.
+2. Ejecutar la aplicación en la ventana inicial
+3. Ir a la parte superior de la ventana dándole click a la opción File. Seleccionamos la opción Create Disk Image.
+4. Se desplegará un menú con diferentes opciones que a continuación explicaremos:
+    - Physicial Drive: Hace referencia a un contenedor físico de almacenamiento. Este puede ser una USB o un disco externo.
+    - Logical Drive: Hace referencia a una partición o volumen en específico. Es posible que solamente se quiera llegar a realizar una copia forense referente a una partición únicamente de un medio de almacenamiento físico.
+    - Image File: Hace referencia a realizar una copia a partir de una imagen forense. Generalmente esto ya es una copia previa bit a bit.
+    - Contents of a Folder: Exclusivamente hace referencia a un folder en específico. Solamente realizará la copia basada en las direcciones de memoria en donde se encuentre el folder a copiar.
+    - Férrico Device: Hace referencia a medios de almacenamiento ópticos. Es posible tener esta opción debido a que existen medios de almacenamiento ópticos (CD/DVD/BlueRay) que permiten reescritura.
+
+5. En caso de nuestra práctica, tenemos un dispositivo externo por lo que la opción a escoger es Physical Drive. Podrá escoger la unidad que quiera llegar a trabajar. Si llega a desconocer las unidades listadas, guíese por el tamaño que presentan.
+6. Luego es necesario configurar el tipo de archivo resultante del proceso. Para ello seleccione la opción Add la cual presentará los diferentes formatos (Raw (dd), SMART, E01). Seleccione la opción Raw(dd) y prosiga.
+7. Ingrese la información correspondiente a la evidencia según el caso.
+8. Para terminar, ingrese la ruta de ubicación donde se almacenará la imagen con el nombre (el nombre no debe incluir el formato de archivo).
+   __NOTA:__ Se recomienda no llegar a fragmentar en archivos más pequeños la evidencia, por lo que será necesario configurar la opción Image Fragment Size en 0, pero si el medio de almacenamiento es grande, configure el tamaño en MB en los cuales desea particionarlo. De igual manera la parte de compresión.
+9. Finalmente, para llegar a realizar una verificación completa del proceso, seleccione las opciones de Verify images after they are created, Precalculate Progress Statistics y Create directory listings of all files in the image after they are created. Usted podrá ver el progreso y el tiempo estimado varía según el tamaño del medio de almacenamiento.
+10. Si el procedimiento no tuvo ningún inconveniente, se generará una ventana con un resumen de la información de la imagen. De igual manera se genera automáticamente un archivo TXT que contiene dicha información.
+
+### Recuperar archivos de una imagen forense
 
 Este procedimiento le permitirá extraer los archivos que se encuentran en una imagen forense, de acuerdo con el estado del elemento de origen, se puede llegar obtener la restauración de archivos que se encuentran borrados.
 
@@ -236,7 +244,7 @@ Se debe realizar la instalación de la herramienta FOCA y luego realizar la crea
 
 ### Proceso de Sanitización
 
-A continuación, se detalla el proceso de sanitización de medios de almacenamiento usados para el análisis y almacenamiento de la evidencia digital 
+A continuación, se detalla el proceso de sanitización de medios de almacenamiento usados para el análisis y almacenamiento de la evidencia digital
 
 1. Se verifican los dispositivos USB instalados y reconocidos en el equipo
 2. El administrador de dispositivos reconoce las unidades de almacenamiento

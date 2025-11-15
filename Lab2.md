@@ -1,6 +1,6 @@
-# Laboratorio 2. Full Live Response
+# Laboratorio 2. FulIn-Depth Response
 
-- [Laboratorio 2. Full Live Response](#laboratorio-2-full-live-response)
+- [Laboratorio 2. FulIn-Depth Response](#laboratorio-2-fulin-depth-response)
   - [Objetivos](#objetivos)
   - [Recursos a Utilizar](#recursos-a-utilizar)
   - [Lecturas Complementarias](#lecturas-complementarias)
@@ -17,16 +17,15 @@
       - [Exterro Registry Viewer](#exterro-registry-viewer)
       - [Windows Registry Recovery](#windows-registry-recovery)
     - [Volcado de Memoria RAM](#volcado-de-memoria-ram)
-    - [Exterro FTK Imager](#exterro-ftk-imager)
+      - [Exterro FTK Imager](#exterro-ftk-imager)
     - [Herramientas de análisis del archivo de memoria RAM](#herramientas-de-análisis-del-archivo-de-memoria-ram)
       - [Volatility Workbench](#volatility-workbench)
       - [Mandiant RedLine](#mandiant-redline)
       - [Analizando una memoria RAM](#analizando-una-memoria-ram)
         - [Lab 00](#lab-00)
         - [Lab 01](#lab-01)
-        - [Análisis propio](#análisis-propio)
-    - [Levantamiento de Imagen Forense (Dispositivo Externo o Interno)](#levantamiento-de-imagen-forense-dispositivo-externo-o-interno)
-      - [Imagen Forense con Exterro FTK Imager](#imagen-forense-con-exterro-ftk-imager)
+        - [Análisis al detalle con RedLine](#análisis-al-detalle-con-redline)
+      - [Análisis propio](#análisis-propio)
 
 ## Objetivos
 
@@ -112,7 +111,6 @@ Sobre la máquina de Windows a analizar, realice un levantamiento de evidencia v
 
 - Levantamiento del registro de Windows.
 - Levantamiento de una imagen de la memoria RAM.
-- Levantamiento de una imagen de disco de una unidad de almacenamiento (Memoria USB).
 
 ### Levantamiento del registro de Windows
 
@@ -154,7 +152,7 @@ __Pregunta:__ ¿Cuál aplicación considera usted más adecuada para realizar el
 
 Al igual que los medios de almacenamiento como lo son discos duros, memorias USB, DVD/CD/Blu-ray y otros, la memoria RAM es un dispositivo de almacenamiento de información la cual tiende a ser volátil pero muy útil en casos de investigación. Dicha información hará referencia a la información que es accedida por programas durante su ejecución.
 
-### Exterro FTK Imager
+#### Exterro FTK Imager
 
 Para realizar una copia (termino técnico utilizado es el volcamiento de memoria) se hará uso del programa Exterro FTK Imager.Recuerde consultar la sección de [Recursos a Utilizar](#recursos-a-utilizar)
 
@@ -165,7 +163,7 @@ Para realizar una copia (termino técnico utilizado es el volcamiento de memoria
 
 ### Herramientas de análisis del archivo de memoria RAM
 
-Una vez generado el archivo de la memoria RAM, es posible cargar
+Una vez generado el archivo de la memoria RAM, es posible cargar el archivo en alguna herramienta de análisis.
 
 #### Volatility Workbench
 
@@ -210,7 +208,18 @@ En esta sección se indicará un archivo de una memoria que esta preparada para 
 3. Ingrese a la siguiente página para seguir las instrucciones. [MemLabs - Lab1](https://n1ght-w0lf.github.io/ctf%20writeups/memlabs-lab1/)
 4. Siga las instrucciones que allí se indican para realizar el análisis de la memoria.
 
-##### Análisis propio
+##### Análisis al detalle con RedLine
+
+Realizar el laboratorio descrito en la plataforma de entrenamiento usada en la clase anterior.
+
+1. Ingrese a la plataforma de [Tryhackme](https://https://tryhackme.com/)
+2. Busque el laboratorio denominado __REDLINE__
+3. Active en el laboratorio haciendo clic en el botón de __"Join Room"__
+4. Resuelva todas preguntas que plantea la plataforma.
+
+__Nota:__ Recuerde realizar la documentación de todos los pasos que ejecutó para el análisis.
+
+#### Análisis propio
 
 Teniendo en cuentas las herramientas adicionales que usted trabajo en los pasos anteriores
 
@@ -218,31 +227,3 @@ Teniendo en cuentas las herramientas adicionales que usted trabajo en los pasos 
 - RedLine
 
 __Pregunta:__ ¿Es posible obtener los mismos resultados?. Justifique su respuesta y entregue evidencia que lo demuestre.
-
-### Levantamiento de Imagen Forense (Dispositivo Externo o Interno)
-
-Es posible llegar a realizar una copia forense bit a bit de diferentes dispositivos de almacenamientos y de diferentes maneras según la finalidad que se quiera obtener.
-
-__NOTA:__ Para la ejecución de este laboratorio por favor hacer uso de una memoria USB de máximo 8GB. El procedimiento que vamos a ejecutar es el mismo en cualquier tipo de almacenamiento sin importar su tamaño.
-
-#### Imagen Forense con Exterro FTK Imager
-
-Para iniciar el proceso de copia forense de una unidad de almacenamiento se ha´ra uso de la herramienta de Exterro FTK Imager.
-
-1. Descargar e instalar la aplicación con las opciones por defecto.
-2. Ejecutar la aplicación en la ventana inicial
-3. Ir a la parte superior de la ventana dándole click a la opción File. Seleccionamos la opción Create Disk Image.
-4. Se desplegará un menú con diferentes opciones que a continuación explicaremos:
-    - Physicial Drive: Hace referencia a un contenedor físico de almacenamiento. Este puede ser una USB o un disco externo.
-    - Logical Drive: Hace referencia a una partición o volumen en específico. Es posible que solamente se quiera llegar a realizar una copia forense referente a una partición únicamente de un medio de almacenamiento físico.
-    - Image File: Hace referencia a realizar una copia a partir de una imagen forense. Generalmente esto ya es una copia previa bit a bit.
-    - Contents of a Folder: Exclusivamente hace referencia a un folder en específico. Solamente realizará la copia basada en las direcciones de memoria en donde se encuentre el folder a copiar.
-    - Ferrico Device: Hace referencia a medios de almacenamiento ópticos. Es posible tener esta opción debido a que existen medios de almacenamiento ópticos (CD/DVD/BlueRay) que son re escribibles.
-
-5. En caso de nuestra práctica, tenemos un dispositivo externo por lo que la opción a escoger es Physical Drive. Podrá escoger la unidad que quiera llegar a trabajar. Si llega a desconocer las unidades listadas, guíese por el tamaño que presentan.
-6. Luego es necesario configurar el tipo de archivo resultante del proceso. Para ello seleccione la opción Add la cual presentará los diferentes formatos (Raw (dd), SMART, E01). Seleccione la opción Raw(dd) y prosiga.
-7. Ingrese la información correspondiente a la evidencia según el caso.
-8. Para terminar, ingrese la ruta de ubicación donde se almacenará la imagen con el nombre (el nombre no debe incluir el formato de archivo).
-   __NOTA:__ Se recomienda no llegar a fragmentar en archivos más pequeños la evidencia, por lo que será necesario configurar la opción Image Fragment Size en 0, pero si el medio de almacenamiento es grande, configure el tamaño en MB en los cuales desea particionarlo. De igual manera la parte de compresión.
-9. Finalmente, para llegar a realizar una verificación completa del proceso, seleccione las opciones de Verify images after they are created, Precalculate Progress Statistics y Create directorylistings of all files in the image after they are created. Usted podrá ver el progreso y el tiempo estimado varía según el tamaño del medio de almacenamiento.
-10. Si el procedimiento no tuvo ningún inconveniente, se generará una ventana con un resumen de la información de la imagen. De igual manera se genera automáticamente un archivo TXT que contiene dicha información.
