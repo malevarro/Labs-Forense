@@ -1,6 +1,6 @@
-# Laboratorio 2. FulIn-Depth Response
+# Laboratorio 2. In-Depth Response
 
-- [Laboratorio 2. FulIn-Depth Response](#laboratorio-2-fulin-depth-response)
+- [Laboratorio 2. In-Depth Response](#laboratorio-2-in-depth-response)
   - [Objetivos](#objetivos)
   - [Recursos a Utilizar](#recursos-a-utilizar)
   - [Lecturas Complementarias](#lecturas-complementarias)

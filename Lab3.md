@@ -1,6 +1,6 @@
-# Laboratorio 2. Full Live Response
+# Laboratorio 3. Full Live Response
 
-- [Laboratorio 2. Full Live Response](#laboratorio-2-full-live-response)
+- [Laboratorio 3. Full Live Response](#laboratorio-3-full-live-response)
   - [Objetivos](#objetivos)
   - [Recursos a Utilizar](#recursos-a-utilizar)
   - [Lecturas Complementarias](#lecturas-complementarias)
